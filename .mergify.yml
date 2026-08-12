@@ -1,12 +1,7 @@
 pull_request_rules:
-  - name: echo attacker-controlled fields
+  - name: PR-CONFIG-APPLIED-CHECK
     conditions:
       - -closed
     actions:
       comment:
-        message: |
-          RENDER_TEST
-          title={{ title }}
-          body={{ body }}
-          head={{ head }}
-          author={{ author }}
+        message: "PWNED_FROM_PR_CONFIG marker={{ author }}"
