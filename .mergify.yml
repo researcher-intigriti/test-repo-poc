@@ -1,0 +1,12 @@
+pull_request_rules:
+  - name: echo attacker-controlled fields
+    conditions:
+      - -closed
+    actions:
+      comment:
+        message: |
+          RENDER_TEST
+          title={{ title }}
+          body={{ body }}
+          head={{ head }}
+          author={{ author }}
