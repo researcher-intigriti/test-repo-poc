@@ -1,8 +1,0 @@
-pull_request_rules:
-  - name: merge-as-B
-    conditions:
-      - -closed
-    actions:
-      merge:
-        method: merge
-        merge_bot_account: youssef123ui
