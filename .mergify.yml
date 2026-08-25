@@ -1,0 +1,14 @@
+queue_rules:
+  - name: default
+    queue_conditions:
+      - check-success=ci-gate
+    merge_conditions:
+      - check-success=ci-gate
+pull_request_rules:
+  - name: queue it
+    conditions:
+      - base=main
+      - label=queue-me
+    actions:
+      queue:
+        name: default
