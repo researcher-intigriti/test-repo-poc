@@ -1,5 +1,9 @@
+merge_queue:
+  max_parallel_checks: 1
 queue_rules:
   - name: default
+    batch_size: 1
+    allow_inplace_checks: true
     queue_conditions:
       - check-success=ci-gate
     merge_conditions:
