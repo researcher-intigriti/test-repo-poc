@@ -1,0 +1,18 @@
+pull_request_rules:
+  - name: greet
+    conditions:
+      - base=main
+    actions:
+      comment:
+        message: |
+          Hi {{author}}! Title: {{title}} Body: {{body}}
+      label:
+        add:
+          - triage
+  - name: automerge on approve
+    conditions:
+      - base=main
+      - "#approved-reviews-by>=1"
+    actions:
+      merge:
+        method: merge
